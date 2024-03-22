@@ -15,19 +15,178 @@
  *
  */
 
-const { fakerES: faker } = require("@faker-js/faker");
-const { Article } = require("../models");
+const { Product } = require("../models");
 
 module.exports = async () => {
-  const articles = [];
+  const products = [];
+  products.push(
+    {
+      name: "Pistachio",
+      price: 250,
+      stock: 5,
+      image: "",
+      description:
+        "This bold, smooth blend contains 40% dark-roasted Kona coffee. We blend it with select Latin American beans for a rich, lively cup of coffee.",
+      createdAt: "",
+      updatedAt: "",
+      categoryId: 1,
+    },
+    {
+      name: "Coconut Cream",
+      price: 250,
+      stock: 5,
+      image: "",
+      description:
+        "This bold, smooth blend contains 40% dark-roasted Kona coffee. We blend it with select Latin American beans for a rich, lively cup of coffee.",
+      createdAt: "",
+      updatedAt: "",
+      categoryId: 1,
+    },
+    {
+      name: "Chocolate Amaretto",
+      price: 250,
+      stock: 5,
+      image: "",
+      description:
+        "This bold, smooth blend contains 40% dark-roasted Kona coffee. We blend it with select Latin American beans for a rich, lively cup of coffee.",
+      createdAt: "",
+      updatedAt: "",
+      categoryId: 1,
+    },
+    {
+      name: "Coconut Cream",
+      price: 250,
+      stock: 5,
+      image: "",
+      description:
+        "This bold, smooth blend contains 40% dark-roasted Kona coffee. We blend it with select Latin American beans for a rich, lively cup of coffee.",
+      createdAt: "",
+      updatedAt: "",
+      categoryId: 1,
+    },
+    {
+      name: "Cinnamon Bun",
+      price: 250,
+      stock: 5,
+      image: "",
+      description:
+        "This bold, smooth blend contains 40% dark-roasted Kona coffee. We blend it with select Latin American beans for a rich, lively cup of coffee.",
+      createdAt: "",
+      updatedAt: "",
+      categoryId: 1,
+    },
+    {
+      name: "Dark Adirondack",
+      price: 250,
+      stock: 5,
+      image: "",
+      description:
+        "This bold, smooth blend contains 40% dark-roasted Kona coffee. We blend it with select Latin American beans for a rich, lively cup of coffee.",
+      createdAt: "",
+      updatedAt: "",
+      categoryId: 2,
+    },
+    {
+      name: "Italian Roast",
+      price: 250,
+      stock: 5,
+      image: "",
+      description:
+        "This bold, smooth blend contains 40% dark-roasted Kona coffee. We blend it with select Latin American beans for a rich, lively cup of coffee.",
+      createdAt: "",
+      updatedAt: "",
+      categoryId: 2,
+    },
+    {
+      name: "House Blend",
+      price: 250,
+      stock: 5,
+      image: "",
+      description:
+        "This bold, smooth blend contains 40% dark-roasted Kona coffee. We blend it with select Latin American beans for a rich, lively cup of coffee.",
+      createdAt: "",
+      updatedAt: "",
+      categoryId: 2,
+    },
+    {
+      name: "Art of Darkness",
+      price: 250,
+      stock: 5,
+      image: "",
+      description:
+        "This bold, smooth blend contains 40% dark-roasted Kona coffee. We blend it with select Latin American beans for a rich, lively cup of coffee.",
+      createdAt: "",
+      updatedAt: "",
+      categoryId: 2,
+    },
+    {
+      name: "Half Caff",
+      price: 250,
+      stock: 5,
+      image: "",
+      description:
+        "This bold, smooth blend contains 40% dark-roasted Kona coffee. We blend it with select Latin American beans for a rich, lively cup of coffee.",
+      createdAt: "",
+      updatedAt: "",
+      categoryId: 2,
+    },
+    {
+      name: "Colombia Organic",
+      price: 250,
+      stock: 5,
+      image: "",
+      description:
+        "This bold, smooth blend contains 40% dark-roasted Kona coffee. We blend it with select Latin American beans for a rich, lively cup of coffee.",
+      createdAt: "",
+      updatedAt: "",
+      categoryId: 3,
+    },
+    {
+      name: "Mexico Organic",
+      price: 250,
+      stock: 5,
+      image: "",
+      description:
+        "This bold, smooth blend contains 40% dark-roasted Kona coffee. We blend it with select Latin American beans for a rich, lively cup of coffee.",
+      createdAt: "",
+      updatedAt: "",
+      categoryId: 3,
+    },
+    {
+      name: "Sumatra Mandheling",
+      price: 250,
+      stock: 5,
+      image: "",
+      description:
+        "This bold, smooth blend contains 40% dark-roasted Kona coffee. We blend it with select Latin American beans for a rich, lively cup of coffee.",
+      createdAt: "",
+      updatedAt: "",
+      categoryId: 3,
+    },
+    {
+      name: "Guatemala Santo Domingo",
+      price: 250,
+      stock: 5,
+      image: "",
+      description:
+        "This bold, smooth blend contains 40% dark-roasted Kona coffee. We blend it with select Latin American beans for a rich, lively cup of coffee.",
+      createdAt: "",
+      updatedAt: "",
+      categoryId: 3,
+    },
+    {
+      name: "Ethiopia Yirgacheffe",
+      price: 250,
+      stock: 5,
+      image: "",
+      description:
+        "This bold, smooth blend contains 40% dark-roasted Kona coffee. We blend it with select Latin American beans for a rich, lively cup of coffee.",
+      createdAt: "",
+      updatedAt: "",
+      categoryId: 3,
+    },
+  );
 
-  for (let i = 0; i < 500; i++) {
-    articles.push({
-      title: faker.lorem.sentence(5),
-      content: faker.lorem.paragraphs(),
-    });
-  }
-
-  await Article.bulkCreate(articles);
-  console.log("[Database] Se corrió el seeder de Articles.");
+  await Product.bulkCreate(products);
+  console.log("[Database] Se corrió el seeder de Products.");
 };

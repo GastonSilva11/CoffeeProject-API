@@ -1,20 +1,34 @@
 const { Model, DataTypes } = require("sequelize");
 
-class Comment extends Model {
+class Product extends Model {
   static initModel(sequelize) {
-    Comment.init(
+    Product.init(
       {
-        content: {
-          type: DataTypes.TEXT,
+        id: {
+          type: DataTypes.BIGINT.UNSIGNED,
+          primaryKey: true,
+          autoIncrement: true,
+        },
+        name: {
+          type: DataTypes.STRING,
+        },
+        price: {
+          type: DataTypes.DECIMAL,
+        },
+        stock: {
+          type: DataTypes.INTEGER,
+        },
+        image: {
+          type: DataTypes.STRING,
         },
       },
       {
         sequelize,
-        modelName: "comment",
+        modelName: "product",
       },
     );
-    return Comment;
+    return Product;
   }
 }
 
-module.exports = Comment;
+module.exports = Product;
