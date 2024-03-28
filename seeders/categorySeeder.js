@@ -22,10 +22,10 @@ module.exports = async () => {
 
   categories.push(
     {
-      name: "Blends",
+      name: "Flavored",
     },
     {
-      name: "Flavored",
+      name: "Blends",
     },
 
     {

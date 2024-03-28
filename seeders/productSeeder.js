@@ -29,6 +29,7 @@ module.exports = async () => {
         "This bold, smooth blend contains 40% dark-roasted Kona coffee. We blend it with select Latin American beans for a rich, lively cup of coffee.",
       createdAt: "",
       updatedAt: "",
+      color: "#74243d",
       categoryId: 1,
     },
     {
@@ -40,6 +41,7 @@ module.exports = async () => {
         "This bold, smooth blend contains 40% dark-roasted Kona coffee. We blend it with select Latin American beans for a rich, lively cup of coffee.",
       createdAt: "",
       updatedAt: "",
+      color: "#74243d",
       categoryId: 1,
     },
     {
@@ -51,10 +53,11 @@ module.exports = async () => {
         "This bold, smooth blend contains 40% dark-roasted Kona coffee. We blend it with select Latin American beans for a rich, lively cup of coffee.",
       createdAt: "",
       updatedAt: "",
+      color: "#700804",
       categoryId: 1,
     },
     {
-      name: "Coconut Cream",
+      name: "Half Moon",
       price: 250,
       stock: 5,
       image: "",
@@ -62,6 +65,7 @@ module.exports = async () => {
         "This bold, smooth blend contains 40% dark-roasted Kona coffee. We blend it with select Latin American beans for a rich, lively cup of coffee.",
       createdAt: "",
       updatedAt: "",
+      color: "#2e2a27",
       categoryId: 1,
     },
     {
@@ -73,6 +77,7 @@ module.exports = async () => {
         "This bold, smooth blend contains 40% dark-roasted Kona coffee. We blend it with select Latin American beans for a rich, lively cup of coffee.",
       createdAt: "",
       updatedAt: "",
+      color: "#3ec2cf",
       categoryId: 1,
     },
     {
@@ -84,6 +89,7 @@ module.exports = async () => {
         "This bold, smooth blend contains 40% dark-roasted Kona coffee. We blend it with select Latin American beans for a rich, lively cup of coffee.",
       createdAt: "",
       updatedAt: "",
+      color: "#0c2639",
       categoryId: 2,
     },
     {
@@ -95,6 +101,7 @@ module.exports = async () => {
         "This bold, smooth blend contains 40% dark-roasted Kona coffee. We blend it with select Latin American beans for a rich, lively cup of coffee.",
       createdAt: "",
       updatedAt: "",
+      color: "#0c2639",
       categoryId: 2,
     },
     {
@@ -106,6 +113,7 @@ module.exports = async () => {
         "This bold, smooth blend contains 40% dark-roasted Kona coffee. We blend it with select Latin American beans for a rich, lively cup of coffee.",
       createdAt: "",
       updatedAt: "",
+      color: "#0c2639",
       categoryId: 2,
     },
     {
@@ -117,6 +125,7 @@ module.exports = async () => {
         "This bold, smooth blend contains 40% dark-roasted Kona coffee. We blend it with select Latin American beans for a rich, lively cup of coffee.",
       createdAt: "",
       updatedAt: "",
+      color: "#2e2a27",
       categoryId: 2,
     },
     {
@@ -128,6 +137,7 @@ module.exports = async () => {
         "This bold, smooth blend contains 40% dark-roasted Kona coffee. We blend it with select Latin American beans for a rich, lively cup of coffee.",
       createdAt: "",
       updatedAt: "",
+      color: "#0c2639",
       categoryId: 2,
     },
     {
@@ -139,6 +149,7 @@ module.exports = async () => {
         "This bold, smooth blend contains 40% dark-roasted Kona coffee. We blend it with select Latin American beans for a rich, lively cup of coffee.",
       createdAt: "",
       updatedAt: "",
+      color: "#700804",
       categoryId: 3,
     },
     {
@@ -150,6 +161,7 @@ module.exports = async () => {
         "This bold, smooth blend contains 40% dark-roasted Kona coffee. We blend it with select Latin American beans for a rich, lively cup of coffee.",
       createdAt: "",
       updatedAt: "",
+      color: "#700804",
       categoryId: 3,
     },
     {
@@ -161,6 +173,7 @@ module.exports = async () => {
         "This bold, smooth blend contains 40% dark-roasted Kona coffee. We blend it with select Latin American beans for a rich, lively cup of coffee.",
       createdAt: "",
       updatedAt: "",
+      color: "#700804",
       categoryId: 3,
     },
     {
@@ -172,6 +185,7 @@ module.exports = async () => {
         "This bold, smooth blend contains 40% dark-roasted Kona coffee. We blend it with select Latin American beans for a rich, lively cup of coffee.",
       createdAt: "",
       updatedAt: "",
+      color: "#700804",
       categoryId: 3,
     },
     {
@@ -183,6 +197,7 @@ module.exports = async () => {
         "This bold, smooth blend contains 40% dark-roasted Kona coffee. We blend it with select Latin American beans for a rich, lively cup of coffee.",
       createdAt: "",
       updatedAt: "",
+      color: "#700804",
       categoryId: 3,
     },
   );
