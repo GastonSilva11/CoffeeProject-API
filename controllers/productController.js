@@ -18,11 +18,21 @@
  * son: index, show, store, update y destroy.
  */
 
+const { Product } = require("../models");
+
 // Display a listing of the resource.
-async function index(req, res) {}
+async function index(req, res) {
+  const products = await Product.findAll();
+  return res.json(products);
+}
 
 // Display the specified resource.
-async function show(req, res) {}
+async function show(req, res) {
+  const id = req.params.id;
+  const oneProduct = await Product.findByPk(id);
+
+  return res.json(oneProduct);
+}
 
 // Show the form for creating a new resource
 async function create(req, res) {}

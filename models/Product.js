@@ -21,6 +21,9 @@ class Product extends Model {
         image: {
           type: DataTypes.STRING,
         },
+        description: {
+          type: DataTypes.STRING,
+        },
       },
       {
         sequelize,
