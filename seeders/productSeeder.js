@@ -72,7 +72,7 @@ module.exports = async () => {
       name: "Cinnamon Bun",
       price: 250,
       stock: 5,
-      image: "/src/assets/img/CinnamonBun.png",
+      image: "/src/assets/img/Flavored-CinnamonBun.png",
       description:
         "Indulge in the warm, comforting embrace of our Cinnamon Bun blend. Rich cinnamon swirls delicately with creamy coffee, evoking the nostalgic delight of freshly baked buns.",
       createdAt: "",
