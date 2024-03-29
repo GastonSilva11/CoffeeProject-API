@@ -18,7 +18,7 @@
  * son: index, show, store, update y destroy.
  */
 
-const { Product } = require("../models");
+const { Product, Category } = require("../models");
 
 // Display a listing of the resource.
 async function index(req, res) {
@@ -29,7 +29,7 @@ async function index(req, res) {
 // Display the specified resource.
 async function show(req, res) {
   const id = req.params.id;
-  const oneProduct = await Product.findByPk(id);
+  const oneProduct = await Product.findByPk(id, { include: Category });
 
   return res.json(oneProduct);
 }
