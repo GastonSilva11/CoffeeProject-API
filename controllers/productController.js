@@ -34,9 +34,6 @@ async function show(req, res) {
   return res.json(oneProduct);
 }
 
-// Show the form for creating a new resource
-async function create(req, res) {}
-
 // Store a newly created resource in storage.
 async function store(req, res) {
   const { name, description, price, stock, categoryId, image } = req.body;
@@ -59,14 +56,6 @@ async function store(req, res) {
     console.error("Error creating product:", error);
     return res.status(500).json({ error: "Internal server error" });
   }
-}
-
-// Show the form for editing the specified resource.
-async function edit(req, res) {
-  const id = req.params.id;
-  const oneProduct = await Product.findByPk(id, { include: Category });
-
-  return res.json(oneProduct);
 }
 
 // Update the specified resource in storage.
@@ -130,9 +119,7 @@ async function destroy(req, res) {
 module.exports = {
   index,
   show,
-  create,
   store,
-  edit,
   update,
   destroy,
 };
