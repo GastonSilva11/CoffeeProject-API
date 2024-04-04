@@ -38,7 +38,28 @@ async function show(req, res) {
 async function create(req, res) {}
 
 // Store a newly created resource in storage.
-async function store(req, res) {}
+async function store(req, res) {
+  const { name, description, price, stock, categoryId, image } = req.body;
+  console.log(req.body);
+
+  try {
+    // Create the product in the database
+    const newProduct = await Product.create({
+      name,
+      description,
+      price,
+      stock,
+      categoryId,
+      image,
+    });
+
+    // Respond with the newly created product
+    return res.status(201).json(newProduct);
+  } catch (error) {
+    console.error("Error creating product:", error);
+    return res.status(500).json({ error: "Internal server error" });
+  }
+}
 
 // Show the form for editing the specified resource.
 async function edit(req, res) {
