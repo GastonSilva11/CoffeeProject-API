@@ -18,6 +18,7 @@ const productRoutes = require("./productRoutes");
 const publicRoutes = require("./publicRoutes");
 const privateRoutes = require("./privateRoutes");
 const categoryRoutes = require("./categoryRoutes");
+const adminRoutes = require("./adminRoutes");
 
 module.exports = (app) => {
   /**
@@ -30,7 +31,8 @@ module.exports = (app) => {
   app.use("/users", userRoutes);
   app.use("/products", productRoutes);
   app.use("/category", categoryRoutes);
+  app.use("/admin", adminRoutes);
 
-  app.use("/admin", privateRoutes);
+  // TODO auth routes
   app.use("/", publicRoutes);
 };
