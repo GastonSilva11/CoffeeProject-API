@@ -1,35 +1,37 @@
-const { Article } = require("../models");
+const jwt = require("jsonwebtoken");
+const bcrypt = require("bcryptjs");
+const { User } = require("../models");
 
-// Display a listing of the resource.
-async function index(req, res) {}
+async function validateUser(req, res) {
+  //Validacion con el token
 
-// Display the specified resource.
-async function show(req, res) {}
+  try {
+    const user = await User.findOne({ where: { email: req.body.email } });
+    console.log(user.password);
 
-// Show the form for creating a new resource
-async function create(req, res) {}
+    if (!user) {
+      console.log("Username does not exist.");
+      return res.json({ msg: "Incorrect credentials. Please try again." });
+    }
 
-// Store a newly created resource in storage.
-async function store(req, res) {}
+    const match = await bcrypt.compare(req.body.password, user.password);
+    console.log(match);
 
-// Show the form for editing the specified resource.
-async function edit(req, res) {}
+    if (!match) {
+      console.log("Invalid password.");
+      return res.json({ msg: "Incorrect credentials. Please try again." });
+    }
 
-// Update the specified resource in storage.
-async function update(req, res) {}
+    const token = jwt.sign({ sub: user.id }, process.env.JWT_SECRET);
 
-// Remove the specified resource from storage.
-async function destroy(req, res) {}
-
-// Otros handlers...
-// ...
+    return res.json({
+      token: token,
+    });
+  } catch (err) {
+    console.log(err);
+  }
+}
 
 module.exports = {
-  index,
-  show,
-  create,
-  store,
-  edit,
-  update,
-  destroy,
+  validateUser,
 };

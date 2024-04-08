@@ -1,3 +1,4 @@
 {
-  "ext": "js, json, ejs, njk, eta"
+  "ext": "js, json, ejs, njk, eta",
+  "ignore": ["sessions/*"]
 }
