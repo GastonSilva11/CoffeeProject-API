@@ -19,6 +19,7 @@
  */
 
 const { Product, Category } = require("../models");
+const formidable = require("formidable");
 
 // Display a listing of the resource.
 async function index(req, res) {
@@ -36,10 +37,24 @@ async function show(req, res) {
 
 // Store a newly created resource in storage.
 async function store(req, res) {
-  const { name, description, price, stock, categoryId, image } = req.body;
-  console.log(req.body);
+  console.log("Hola");
+  const form = formidable({
+    multiples: true,
+    uploadDir: __dirname + "/public/img",
+    keepExtensions: true,
+  });
 
-  try {
+  form.parse(req, async (err, fields, files) => {
+    console.log(err);
+    console.log({ fields });
+    console.log({ files });
+    await Product.create({ name: fields.name, img: files.productImage.newFilename });
+    res.send("se creo un producto");
+  });
+  /* const { name, description, price, stock, categoryId, image } = req.body;
+  console.log(req.body); */
+
+  /* try {
     // Create the product in the database
     const newProduct = await Product.create({
       name,
@@ -55,7 +70,7 @@ async function store(req, res) {
   } catch (error) {
     console.error("Error creating product:", error);
     return res.status(500).json({ error: "Internal server error" });
-  }
+  } */
 }
 
 // Update the specified resource in storage.
