@@ -23,7 +23,7 @@ Product.initModel(sequelize);
 Order.initModel(sequelize);
 Category.initModel(sequelize);
 
-User.hasMany(Order);
+User.hasMany(Order); //un usuario puede tener muchas ordenes
 Order.belongsTo(User);
 
 Category.hasMany(Product);

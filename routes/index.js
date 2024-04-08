@@ -4,7 +4,9 @@
  */
 
 const userRoutes = require("./userRoutes");
+
 const productRoutes = require("./productRoutes");
+
 /**
  * Otra alternativa podría ser organizar las rutas según su nivel de
  * privacidad (ej: si son rutas públicas o privadas).
@@ -19,6 +21,7 @@ const publicRoutes = require("./publicRoutes");
 const privateRoutes = require("./privateRoutes");
 const categoryRoutes = require("./categoryRoutes");
 const adminRoutes = require("./adminRoutes");
+const authRoutes = require("./authRoutes");
 
 module.exports = (app) => {
   /**
@@ -29,9 +32,11 @@ module.exports = (app) => {
    */
 
   app.use("/users", userRoutes);
+
   app.use("/products", productRoutes);
   app.use("/category", categoryRoutes);
   app.use("/admin", adminRoutes);
+  app.use("/login", authRoutes);
 
   // TODO auth routes
   app.use("/", publicRoutes);

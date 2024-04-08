@@ -1,3 +1,4 @@
+const bcrypt = require("bcryptjs");
 const { User } = require("../models");
 
 // Display a listing of the resource.
@@ -20,7 +21,8 @@ async function show(req, res) {
 
 // Store a newly created resource in storage.
 async function store(req, res) {
-  const { firstname, lastname, email, phone, address, password } = req.body;
+  const { firstname, lastname, email, phone, address } = req.body;
+  const password = await bcrypt.hash(req.body.password, 10);
   console.log(req.body);
 
   try {
@@ -96,9 +98,64 @@ async function destroy(req, res) {
     return res.status(500).json({ error: "Internal server error" });
   }
 }
+// =======
+// async function showLoginForm(req, res) {
+//   res.render("login");
+// }
 
-// Otros handlers...
-// ...
+// //Iniciar sesion del usuario
+// async function login(req, res) {
+//   const { email, password } = req.body;
+
+//   if (!email) {
+//     return res.status(400).json({ message: "El campo email es requerido" });
+//   }
+
+//   try {
+//     //Buscar el usuario por su email
+//     const user = await User.findOne({ where: { email } });
+
+//     console.log("Usuario encontrado:", user);
+//     // Si no se encuentra el usuario, mostrar un mensaje de error
+//     if (!user) {
+//       return res.status(404).json({ message: "Usuario no encontrado" });
+//     }
+
+//     // Verificar la contraseña
+//     if (user.password !== password) {
+//       return res.status(401).json({ message: "Contraseña Incorrecta" });
+//     }
+
+//     // Iniciar sesión del usuario (guardar su id en la sesión)
+//     req.session.userId = user.id;
+// >>>>>>> Stashed changes
+
+//Cerrar sesion de un usuario
+
+async function logout(req, res) {
+  //destruir la sesion, borrando el id del usuario de la sesion
+  req.session.destroy();
+
+  res.redirect("/login");
+}
+
+//---
+
+// Registrar un nuevo usuario
+async function register(req, res) {
+  const { username, email, password } = req.body;
+
+  try {
+    // Crear un nuevo usuario en la base de datos
+    const newUser = await User.create({ username, email, password });
+
+    // Redirigir al usuario a la página principal (o donde quieramos)
+    res.redirect("/");
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Error interno del servidor" });
+  }
+}
 
 module.exports = {
   index,
@@ -106,4 +163,8 @@ module.exports = {
   store,
   update,
   destroy,
+  // =======
+
+  logout,
+  register,
 };
