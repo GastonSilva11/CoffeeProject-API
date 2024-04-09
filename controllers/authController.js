@@ -7,7 +7,6 @@ async function validateUser(req, res) {
 
   try {
     const user = await User.findOne({ where: { email: req.body.email } });
-    console.log(user.password);
 
     if (!user) {
       console.log("Username does not exist.");
@@ -15,7 +14,6 @@ async function validateUser(req, res) {
     }
 
     const match = await bcrypt.compare(req.body.password, user.password);
-    console.log(match);
 
     if (!match) {
       console.log("Invalid password.");
@@ -26,6 +24,7 @@ async function validateUser(req, res) {
 
     return res.json({
       token: token,
+      userId: user.id,
     });
   } catch (err) {
     console.log(err);
