@@ -218,5 +218,5 @@ module.exports = async () => {
   );
 
   await Product.bulkCreate(products);
-  console.log("[Database] Se corrió el seeder de Products.");
+  console.log("[Database] We ran the Seeder of Products.");
 };

@@ -37,5 +37,5 @@ module.exports = async () => {
   }
 
   await Order.bulkCreate(orders);
-  console.log("[Database] Se corrió el seeder de Orders.");
+  console.log("[Database] We ran the Seeder of Orders.");
 };

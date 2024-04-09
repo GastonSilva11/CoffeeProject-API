@@ -31,5 +31,5 @@ module.exports = async () => {
   }
 
   await Admin.bulkCreate(admins);
-  console.log("[Database] Se corrió el seeder de Admins.");
+  console.log("[Database] We ran the Seeder of Admins.");
 };

@@ -20,7 +20,9 @@ const db = require("./models");
 
 async function createDatabaseTables() {
   await db.sequelize.sync({ force: true });
-  console.log("[Database] ¡Las tablas fueron creadas!");
+  return console.log("[Database] Successfully created all Tables!");
 }
 
-createDatabaseTables();
+// createDatabaseTables();
+
+module.exports = createDatabaseTables;
