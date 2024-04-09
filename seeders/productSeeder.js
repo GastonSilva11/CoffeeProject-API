@@ -48,7 +48,7 @@ module.exports = async () => {
     },
     {
       name: "Chocolate Amaretto",
-      price: 250,
+      price: 190,
       stock: 5,
       image:
         "https://abtomsvdwctapkbvozbb.supabase.co/storage/v1/object/public/product_images/Flavored-ChocolateAmaretto.png",
@@ -100,7 +100,7 @@ module.exports = async () => {
     },
     {
       name: "Italian Roast",
-      price: 250,
+      price: 190,
       stock: 5,
       image:
         "https://abtomsvdwctapkbvozbb.supabase.co/storage/v1/object/public/product_images/Blends-ItalianRoast.png",
@@ -126,7 +126,7 @@ module.exports = async () => {
     },
     {
       name: "Art of Darkness",
-      price: 250,
+      price: 190,
       stock: 5,
       image:
         "https://abtomsvdwctapkbvozbb.supabase.co/storage/v1/object/public/product_images/Blends-ArtOfDarkness.png",
@@ -152,7 +152,7 @@ module.exports = async () => {
     },
     {
       name: "Colombia Organic",
-      price: 250,
+      price: 190,
       stock: 5,
       image:
         "https://abtomsvdwctapkbvozbb.supabase.co/storage/v1/object/public/product_images/SingleOrigin-Colombia.png",

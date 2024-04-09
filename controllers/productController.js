@@ -35,42 +35,20 @@ async function show(req, res) {
   return res.json(oneProduct);
 }
 
-// Store a newly created resource in storage.
 async function store(req, res) {
-  console.log("Hola");
   const form = formidable({
     multiples: true,
-    uploadDir: __dirname + "/public/img",
+    uploadDir: __dirname + "/../public/img",
     keepExtensions: true,
   });
 
   form.parse(req, async (err, fields, files) => {
-    console.log(err);
     console.log({ fields });
     console.log({ files });
-    await Product.create({ name: fields.name, img: files.productImage.newFilename });
+
+    await Product.create({ name: fields.name, image: files.productImage.newFilename });
     res.send("se creo un producto");
   });
-  /* const { name, description, price, stock, categoryId, image } = req.body;
-  console.log(req.body); */
-
-  /* try {
-    // Create the product in the database
-    const newProduct = await Product.create({
-      name,
-      description,
-      price,
-      stock,
-      categoryId,
-      image,
-    });
-
-    // Respond with the newly created product
-    return res.status(201).json(newProduct);
-  } catch (error) {
-    console.error("Error creating product:", error);
-    return res.status(500).json({ error: "Internal server error" });
-  } */
 }
 
 // Update the specified resource in storage.
