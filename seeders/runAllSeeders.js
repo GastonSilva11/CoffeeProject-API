@@ -23,16 +23,9 @@ async function runAllSeeders() {
   await require("./orderSeeder")();
   await require("./adminSeeder")();
 
-  /**
-   * Aquí se pueden ejectuar otros seeders que hayan en el sistema.
-   * Por ejemplo, si se tuviesen seeders para los usuarios y para los
-   * comentarios, habría que ejectuar:
-   *
-   * await require("./userSeeder")();
-   * await require("./commentSeeder")();
-   */
-
-  console.log("[Database] ¡Los datos de prueba fueron insertados!");
+  console.log("[Database] Successfully inserted example Data for all tables!");
 }
 
-runAllSeeders();
+// runAllSeeders();
+
+module.exports = runAllSeeders;

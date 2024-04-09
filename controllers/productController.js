@@ -46,7 +46,14 @@ async function store(req, res) {
     console.log({ fields });
     console.log({ files });
 
-    await Product.create({ name: fields.name, image: files.productImage.newFilename });
+    await Product.create({
+      name: fields.name,
+      image: files.productImage.newFilename,
+      description: fields.name,
+      price: fields.price,
+      stock: fields.stock,
+      categoryId: fields.categoryId,
+    });
     res.send("se creo un producto");
   });
 }
