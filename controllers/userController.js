@@ -23,10 +23,8 @@ async function show(req, res) {
 async function store(req, res) {
   const { firstname, lastname, email, phone, address } = req.body;
   const password = await bcrypt.hash(req.body.password, 10);
-  console.log(req.body);
 
   try {
-    // Create the user in the database
     const newUser = await User.create({
       firstname,
       lastname,
