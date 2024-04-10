@@ -19,7 +19,14 @@ const { Admin } = require("../models");
 const { fakerES: faker } = require("@faker-js/faker");
 
 module.exports = async () => {
-  const admins = [];
+  const admins = [
+    {
+      firstname: "Admin",
+      lastname: "Admin",
+      email: "test@test.com",
+      password: "123",
+    },
+  ];
 
   for (let i = 0; i < 5; i++) {
     admins.push({

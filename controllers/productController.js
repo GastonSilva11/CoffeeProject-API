@@ -52,7 +52,7 @@ async function store(req, res) {
 
     await Product.create({
       name: fields.name,
-      image: files.productImage.newFilename,
+      image: "/tmp_images/" + files.productImage.newFilename,
       description: fields.name,
       price: fields.price,
       stock: fields.stock,
