@@ -22,14 +22,16 @@ module.exports = async () => {
   const orders = [];
 
   for (let i = 0; i < 10; i++) {
+    const quantity = faker.number.int({ min: 1, max: 10 });
     orders.push({
       status: "pending",
       method: "Credit Card",
+      totalPrice: 250 * quantity,
       products: [
         {
           productName: "Coconut Cream",
           price: 250,
-          quantity: faker.number.int({ min: 1, max: 10 }),
+          quantity: quantity,
         },
       ],
       userId: faker.number.int({ min: 1, max: 10 }),

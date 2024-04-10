@@ -12,6 +12,9 @@ class Order extends Model {
         status: {
           type: DataTypes.STRING,
         },
+        totalPrice: {
+          type: DataTypes.BIGINT.UNSIGNED,
+        },
         method: {
           type: DataTypes.STRING,
         },

@@ -23,6 +23,7 @@ const categoryRoutes = require("./categoryRoutes");
 const adminRoutes = require("./adminRoutes");
 const authRoutes = require("./authRoutes");
 const resetDbRoutes = require("./resetDbRoutes.js");
+const orderRoutes = require("./orderRoutes.js");
 
 module.exports = (app) => {
   /**
@@ -39,6 +40,7 @@ module.exports = (app) => {
   app.use("/admin", adminRoutes);
   app.use("/login", authRoutes);
   app.use("/resetDb", resetDbRoutes);
+  app.use("/orders", orderRoutes);
 
   // TODO auth routes
   app.use("/", publicRoutes);
