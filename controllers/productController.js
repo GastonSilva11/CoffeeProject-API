@@ -18,8 +18,13 @@
  * son: index, show, store, update y destroy.
  */
 
+const { createClient } = require("@supabase/supabase-js");
 const { Product, Category } = require("../models");
 const formidable = require("formidable");
+const fs = require("fs");
+const path = require("path");
+
+const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_KEY);
 
 // Display a listing of the resource.
 async function index(req, res) {
@@ -38,7 +43,6 @@ async function show(req, res) {
 async function store(req, res) {
   const form = formidable({
     multiples: true,
-    uploadDir: __dirname + "/../public/img",
     keepExtensions: true,
   });
 
@@ -54,7 +58,19 @@ async function store(req, res) {
       stock: fields.stock,
       categoryId: fields.categoryId,
     });
-    res.send("se creo un producto");
+
+    const ext = path.extname(files.productImage.filepath);
+    const newFileName = `image_${Date.now()}${ext}}`;
+
+    const { data, error } = await supabase.storage
+      .from("product_images") /* Nombre del Bucket */
+      .upload(files.productImage.newFilename, fs.createReadStream(files.productImage.filepath), {
+        cacheControl: "3600",
+        upsert: false,
+        contentType: files.productImage.mimetype,
+        duplex: "half",
+      });
+    res.send("New Product was created");
   });
 }
 
