@@ -63,7 +63,7 @@ async function store(req, res) {
     const newFileName = `image_${Date.now()}${ext}}`;
 
     const { data, error } = await supabase.storage
-      .from("product_images") /* Nombre del Bucket */
+      .from("tmp_images") /* Nombre del Bucket */
       .upload(files.productImage.newFilename, fs.createReadStream(files.productImage.filepath), {
         cacheControl: "3600",
         upsert: false,
