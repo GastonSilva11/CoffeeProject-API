@@ -5,6 +5,8 @@ const userController = require("../controllers/userController");
 // Rutas relacionadas a los usuarios:
 // ...
 
+// test coomment
+
 router.get("/", userController.index);
 router.post("/", userController.store);
 router.get("/:id", userController.show);

@@ -2,7 +2,10 @@ const { User, Order } = require("../models");
 
 // Display a listing of the resource.
 async function index(req, res) {
-  const orders = await Order.findAll({ include: { model: User } });
+  const orders = await Order.findAll({
+    include: { model: User },
+    order: [["id", "ASC"]],
+  });
   return res.json(orders);
 }
 
@@ -11,8 +14,6 @@ async function show(req, res) {}
 
 // Store a newly created resource in storage.
 async function store(req, res) {
-  console.log(req.body);
-
   const { user, itemsInCart, method, totalPrice } = req.body;
   const userId = user.userId;
 
@@ -32,8 +33,7 @@ async function store(req, res) {
       totalPrice,
     });
 
-    // Respond with the newly created user
-    return res.status(201).json(newOrder);
+    return res.status(200).json({ message: "Order created  successfully" });
   } catch (error) {
     console.error("Error creating order:", error);
 
@@ -42,7 +42,17 @@ async function store(req, res) {
 }
 
 // Update the specified resource in storage.
-async function update(req, res) {}
+async function update(req, res) {
+  const orderId = req.params.id;
+  const { status } = req.body;
+
+  try {
+    const updateOrder = await Order.update({ status }, { where: { id: orderId } });
+    return res.status(200).json({ message: "Order status updated successfully" });
+  } catch (error) {
+    console.error("Error updating order:", error);
+  }
+}
 
 // Remove the specified resource from storage.
 async function destroy(req, res) {

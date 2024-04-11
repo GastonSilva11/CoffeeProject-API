@@ -24,7 +24,7 @@ module.exports = async () => {
   for (let i = 0; i < 10; i++) {
     const quantity = faker.number.int({ min: 1, max: 10 });
     orders.push({
-      status: "pending",
+      status: "Pending",
       method: "Credit Card",
       totalPrice: 250 * quantity,
       products: [

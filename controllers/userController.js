@@ -5,6 +5,7 @@ const { User } = require("../models");
 async function index(req, res) {
   const users = await User.findAll({
     attributes: { exclude: ["password"] },
+    order: [["id", "ASC"]],
   });
   return res.json(users);
 }

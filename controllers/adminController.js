@@ -4,6 +4,7 @@ const { Admin } = require("../models");
 async function index(req, res) {
   const admins = await Admin.findAll({
     attributes: { exclude: ["password"] },
+    order: [["id", "ASC"]],
   });
   return res.json(admins);
 }
@@ -46,8 +47,6 @@ async function update(req, res) {
 
   const { firstname, lastname, email } = req.body;
   try {
-    // Validate the incoming data (e.g., check for required fields, data types)
-
     // Update the product in the database
     const updatedAdmin = await Admin.update(
       {
