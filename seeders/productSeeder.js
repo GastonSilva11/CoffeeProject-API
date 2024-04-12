@@ -76,6 +76,39 @@ module.exports = async () => {
       categoryId: 1,
     },
     {
+      name: "Hazelnut",
+      price: 250,
+      stock: 5,
+      image: "/product_images/Flavored-Hazelnut.png",
+      description:
+        "Experience Utica Coffee's Hazelnut blend: a smooth, nutty delight. Rich hazelnut essence swirls in each sip for a truly indulgent coffee experience.",
+      createdAt: "",
+      updatedAt: "",
+      categoryId: 1,
+    },
+    {
+      name: "Jamaican Me Crazy",
+      price: 250,
+      stock: 5,
+      image: "/product_images/Flavored-JamaicanMeCrazy.png",
+      description:
+        "Escape to the Caribbean with JamaicanMeCrazy coffee. Rich, smooth blend infused with hints of caramel, vanilla, and rum, delivering a tropical paradise in every sip.",
+      createdAt: "",
+      updatedAt: "",
+      categoryId: 1,
+    },
+    {
+      name: "Irish Cream",
+      price: 250,
+      stock: 5,
+      image: "/product_images/Flavored-IrishCream.png",
+      description:
+        "Irish Cream Indulgence: Experience the velvety smoothness of our Irish Cream blend. Rich coffee harmonizes with creamy, indulgent flavors, evoking the luxurious essence of a classic Irish libation in every sip.",
+      createdAt: "",
+      updatedAt: "",
+      categoryId: 1,
+    },
+    {
       name: "Dark Adirondack",
       price: 250,
       stock: 5,
@@ -124,6 +157,39 @@ module.exports = async () => {
       price: 250,
       stock: 5,
       image: "/product_images/Blends-HalfCaff.png",
+      description:
+        "Experience the perfect balance with our Half Caff blend. Delightfully smooth, it offers a milder caffeine experience without compromising on flavor, ensuring a satisfying cup every time.",
+      createdAt: "",
+      updatedAt: "",
+      categoryId: 2,
+    },
+    {
+      name: "Espresso",
+      price: 250,
+      stock: 5,
+      image: "/product_images/Blends-Espresso.png",
+      description:
+        "Embrace the bold intensity of our espresso blend. Crafted to perfection, it offers a rich and robust flavor profile with a lingering crema, delivering the quintessential Italian espresso experience with every shot.",
+      createdAt: "",
+      updatedAt: "",
+      categoryId: 2,
+    },
+    {
+      name: "Breakfast",
+      price: 250,
+      stock: 5,
+      image: "/product_images/Blends-Breakfast.png",
+      description:
+        "Start your day on a bright note with our Breakfast Blend. Light-bodied and smooth, it offers a gentle wake-up call with subtle hints of citrus and a clean finish, perfect for your morning routine.",
+      createdAt: "",
+      updatedAt: "",
+      categoryId: 2,
+    },
+    {
+      name: "Utica Firehouse",
+      price: 250,
+      stock: 5,
+      image: "/product_images/Blends-UticaFirehouse.png",
       description:
         "Experience the perfect balance with our Half Caff blend. Delightfully smooth, it offers a milder caffeine experience without compromising on flavor, ensuring a satisfying cup every time.",
       createdAt: "",
@@ -181,6 +247,39 @@ module.exports = async () => {
       image: "/product_images/SingleOrigin-EthiopiaOrganic.png",
       description:
         "Delve into the exotic flavors of Ethiopia with our Yirgacheffe blend. Renowned for its floral aroma and bright acidity, it offers a unique sensory journey with delicate notes of jasmine, citrus, and honey.",
+      createdAt: "",
+      updatedAt: "",
+      categoryId: 3,
+    },
+    {
+      name: "Colombia Supremo",
+      price: 250,
+      stock: 5,
+      image: "/product_images/SingleOrigin-ColombiaSupremo.png",
+      description:
+        "Revel in the supreme taste of Colombia with our distinguished blend. Grown in the country's fertile soils, it offers a rich and balanced flavor profile, showcasing notes of cocoa, caramel, and a hint of citrus.",
+      createdAt: "",
+      updatedAt: "",
+      categoryId: 3,
+    },
+    {
+      name: "Brazil",
+      price: 250,
+      stock: 5,
+      image: "/product_images/SingleOrigin-Brazil.png",
+      description:
+        "Delve into the exotic flavors of Ethiopia with our Yirgacheffe blend. Renowned for its floral aroma and bright acidity, it offers a unique sensory journey with delicate notes of jasmine, citrus, and honey.",
+      createdAt: "",
+      updatedAt: "",
+      categoryId: 3,
+    },
+    {
+      name: "Costa Rica",
+      price: 250,
+      stock: 5,
+      image: "/product_images/SingleOrigin-CostaRica.png",
+      description:
+        "Embark on a journey to the lush coffee plantations of Costa Rica with our Reserve blend. Delicately cultivated in the country's rich volcanic soils, it boasts a bright acidity, with notes of citrus, honey, and caramel.",
       createdAt: "",
       updatedAt: "",
       categoryId: 3,

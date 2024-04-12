@@ -57,20 +57,25 @@ async function store(req, res) {
 // Update the specified resource in storage.
 async function update(req, res) {
   const productId = req.params.id;
-  try {
-    const form = formidable({
-      multiples: true,
-      keepExtensions: true,
-    });
+  const form = formidable({
+    multiples: true,
+    keepExtensions: true,
+  });
 
-    form.parse(req, async (err, fields, files) => {
+  form.parse(req, async (err, fields, files) => {
+    if (err) {
+      console.error("Error parsing form:", err);
+      return res.status(500).json({ error: "Error parsing form" });
+    }
+
+    try {
       console.log({ fields });
       console.log({ files });
 
       const updatedProduct = await Product.update(
         {
           name: fields.name,
-          image: "/tmp_images/" + files.productImage.newFilename,
+          image: "tmp_images/" + files.productImage.newFilename,
           description: fields.description,
           price: fields.price,
           stock: fields.stock,
@@ -80,24 +85,29 @@ async function update(req, res) {
       );
 
       const ext = path.extname(files.productImage.filepath);
-      const newFileName = `image_${Date.now()}${ext}}`;
+
+      const newFileName = `image_${Date.now()}${ext}`;
 
       const { data, error } = await supabase.storage
-        .from("tmp_images") /* Nombre del Bucket */
+        .from("tmp_images")
         .upload(files.productImage.newFilename, fs.createReadStream(files.productImage.filepath), {
           cacheControl: "3600",
           upsert: false,
           contentType: files.productImage.mimetype,
           duplex: "half",
         });
-      res.send("New Product was created");
-    });
 
-    return res.status(200).json({ message: "Product updated successfully" });
-  } catch (error) {
-    console.error("Error updating product:", error);
-    return res.status(500).json({ error: "Internal server error" });
-  }
+      if (error) {
+        console.error("Error uploading file:", error);
+        return res.status(500).json({ error: "Error uploading file" });
+      }
+
+      res.status(200).json({ message: "Product updated successfully" });
+    } catch (error) {
+      console.error("Error updating product:", error);
+      return res.status(500).json({ error: "Internal server error" });
+    }
+  });
 }
 
 // async function update(req, res) {
