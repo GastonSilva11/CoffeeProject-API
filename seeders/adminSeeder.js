@@ -17,14 +17,17 @@
 
 const { Admin } = require("../models");
 const { fakerES: faker } = require("@faker-js/faker");
+const bcrypt = require("bcryptjs");
 
 module.exports = async () => {
+  const encryptPassword = await bcrypt.hash("123", 10);
+
   const admins = [
     {
       firstname: "Admin",
       lastname: "Admin",
       email: "test@test.com",
-      password: "123",
+      password: encryptPassword,
     },
   ];
 
