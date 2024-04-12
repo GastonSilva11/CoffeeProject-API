@@ -9,6 +9,15 @@ async function index(req, res) {
   return res.json(orders);
 }
 
+async function showTen(req, res) {
+  const orders = await Order.findAll({
+    include: { model: User },
+    order: [["id", "DESC"]],
+    limit: 10,
+  });
+  return res.json(orders);
+}
+
 // Display the specified resource.
 async function show(req, res) {}
 
@@ -79,6 +88,7 @@ async function destroy(req, res) {
 
 module.exports = {
   index,
+  showTen,
   show,
   store,
   update,
