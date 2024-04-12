@@ -4,6 +4,7 @@ const router = express.Router();
 
 router.get("/", orderController.index);
 router.post("/", orderController.store);
+router.get("/last", orderController.showTen);
 router.get("/:id", orderController.show);
 router.patch("/:id", orderController.update);
 router.delete("/:id", orderController.destroy);

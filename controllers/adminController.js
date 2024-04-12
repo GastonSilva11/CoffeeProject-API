@@ -1,4 +1,5 @@
 const { Admin } = require("../models");
+const bcrypt = require("bcryptjs");
 
 // Display a listing of the resource.
 async function index(req, res) {
@@ -21,8 +22,8 @@ async function show(req, res) {
 
 // Store a newly created resource in storage.
 async function store(req, res) {
-  const { firstname, lastname, email, password } = req.body;
-  console.log(req.body);
+  const { firstname, lastname, email } = req.body;
+  const password = await bcrypt.hash(req.body.password, 10);
 
   try {
     // Create the user in the database
