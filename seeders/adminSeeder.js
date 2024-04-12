@@ -36,7 +36,7 @@ module.exports = async () => {
       firstname: faker.person.firstName(),
       lastname: faker.person.lastName(),
       email: faker.internet.email(),
-      password: faker.internet.password(),
+      password: encryptPassword,
     });
   }
 
