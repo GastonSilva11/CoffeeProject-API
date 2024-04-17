@@ -16,6 +16,7 @@
  */
 
 const { Product } = require("../models");
+const { fakerES: faker } = require("@faker-js/faker");
 
 module.exports = async () => {
   const products = [];
@@ -23,7 +24,7 @@ module.exports = async () => {
     {
       name: "Pistachio",
       price: 250,
-      stock: 5,
+      stock: faker.number.int({ min: 1, max: 15 }),
       image: "/product_images/Flavored-Pistachio.png",
       description:
         "Indulge in a nutty symphony with our Pistachio blend. Creamy, nutty undertones intertwine with rich coffee, creating a delightful fusion of flavors in every sip.",
@@ -34,7 +35,7 @@ module.exports = async () => {
     {
       name: "Coconut Cream",
       price: 250,
-      stock: 5,
+      stock: faker.number.int({ min: 1, max: 15 }),
       image: "/product_images/Flavored-CoconutCream.png",
       description:
         "Escape to the tropics with our Coconut Cream blend. Luxuriously creamy coconut flavors meld with smooth coffee, offering a taste of paradise in every sip.",
@@ -45,7 +46,7 @@ module.exports = async () => {
     {
       name: "Chocolate Amaretto",
       price: 190,
-      stock: 5,
+      stock: faker.number.int({ min: 1, max: 15 }),
       image: "/product_images/Flavored-ChocolateAmaretto.png",
       description:
         "Dive into decadence with our Chocolate Amaretto blend. Rich chocolate and almond-infused notes dance harmoniously with bold coffee, creating an indulgent experience reminiscent of Italian elegance.",
@@ -56,7 +57,7 @@ module.exports = async () => {
     {
       name: "Half Moon",
       price: 250,
-      stock: 5,
+      stock: faker.number.int({ min: 1, max: 15 }),
       image: "/product_images/Flavored-HalfMoon.png",
       description:
         "Experience the celestial balance of our Half Moon blend. Robust dark roast meets smooth light roast, creating a captivating harmony perfect for any time of day.",
@@ -67,7 +68,7 @@ module.exports = async () => {
     {
       name: "Cinnamon Bun",
       price: 250,
-      stock: 5,
+      stock: faker.number.int({ min: 1, max: 15 }),
       image: "/product_images/Flavored-CinnamonBun.png",
       description:
         "Indulge in the warm, comforting embrace of our Cinnamon Bun blend. Rich cinnamon swirls delicately with creamy coffee, evoking the nostalgic delight of freshly baked buns.",
@@ -78,7 +79,7 @@ module.exports = async () => {
     {
       name: "Hazelnut",
       price: 250,
-      stock: 5,
+      stock: faker.number.int({ min: 1, max: 15 }),
       image: "/product_images/Flavored-Hazelnut.png",
       description:
         "Experience Utica Coffee's Hazelnut blend: a smooth, nutty delight. Rich hazelnut essence swirls in each sip for a truly indulgent coffee experience.",
@@ -89,7 +90,7 @@ module.exports = async () => {
     {
       name: "Jamaican Me Crazy",
       price: 250,
-      stock: 5,
+      stock: faker.number.int({ min: 1, max: 15 }),
       image: "/product_images/Flavored-JamaicanMeCrazy.png",
       description:
         "Escape to the Caribbean with JamaicanMeCrazy coffee. Rich, smooth blend infused with hints of caramel, vanilla, and rum, delivering a tropical paradise in every sip.",
@@ -100,7 +101,7 @@ module.exports = async () => {
     {
       name: "Irish Cream",
       price: 250,
-      stock: 5,
+      stock: faker.number.int({ min: 1, max: 15 }),
       image: "/product_images/Flavored-IrishCream.png",
       description:
         "Irish Cream Indulgence: Experience the velvety smoothness of our Irish Cream blend. Rich coffee harmonizes with creamy, indulgent flavors, evoking the luxurious essence of a classic Irish libation in every sip.",
@@ -111,7 +112,7 @@ module.exports = async () => {
     {
       name: "Dark Adirondack",
       price: 250,
-      stock: 5,
+      stock: faker.number.int({ min: 1, max: 15 }),
       image: "/product_images/Blends-DarkAdirondack.png",
       description:
         "Venture into the depths of flavor with our Dark Adirondack blend. Robust and invigorating, it captures the rugged essence of the Adirondack wilderness in every bold sip.",
@@ -122,7 +123,7 @@ module.exports = async () => {
     {
       name: "Italian Roast",
       price: 190,
-      stock: 5,
+      stock: faker.number.int({ min: 1, max: 15 }),
       image: "/product_images/Blends-ItalianRoast.png",
       description:
         "Immerse yourself in the bold intensity of Italy with our signature blend. Robust and full-bodied, it embodies the essence of Italian coffee culture in every rich and satisfying sip.",
@@ -133,7 +134,7 @@ module.exports = async () => {
     {
       name: "House Blend",
       price: 250,
-      stock: 5,
+      stock: faker.number.int({ min: 1, max: 15 }),
       image: "/product_images/Blends-HouseBlend.png",
       description:
         "Our hallmark brew, meticulously curated for every coffee enthusiast. With its harmonious flavor profile and comforting aroma, it's the perfect companion for every occasion, embodying the essence of home in every sip.",
@@ -144,7 +145,7 @@ module.exports = async () => {
     {
       name: "Art of Darkness",
       price: 190,
-      stock: 5,
+      stock: faker.number.int({ min: 1, max: 15 }),
       image: "/product_images/Blends-ArtOfDarkness.png",
       description:
         "A bold and mysterious brew, offering a rich, velvety experience. Dark chocolate undertones entwine with smoky caramel hints, inviting you into the enigmatic depths of the night",
@@ -155,7 +156,7 @@ module.exports = async () => {
     {
       name: "Half Caff",
       price: 250,
-      stock: 5,
+      stock: faker.number.int({ min: 1, max: 15 }),
       image: "/product_images/Blends-HalfCaff.png",
       description:
         "Experience the perfect balance with our Half Caff blend. Delightfully smooth, it offers a milder caffeine experience without compromising on flavor, ensuring a satisfying cup every time.",
@@ -166,7 +167,7 @@ module.exports = async () => {
     {
       name: "Espresso",
       price: 250,
-      stock: 5,
+      stock: faker.number.int({ min: 1, max: 15 }),
       image: "/product_images/Blends-Espresso.png",
       description:
         "Embrace the bold intensity of our espresso blend. Crafted to perfection, it offers a rich and robust flavor profile with a lingering crema, delivering the quintessential Italian espresso experience with every shot.",
@@ -177,7 +178,7 @@ module.exports = async () => {
     {
       name: "Breakfast",
       price: 250,
-      stock: 5,
+      stock: faker.number.int({ min: 1, max: 15 }),
       image: "/product_images/Blends-Breakfast.png",
       description:
         "Start your day on a bright note with our Breakfast Blend. Light-bodied and smooth, it offers a gentle wake-up call with subtle hints of citrus and a clean finish, perfect for your morning routine.",
@@ -188,7 +189,7 @@ module.exports = async () => {
     {
       name: "Utica Firehouse",
       price: 250,
-      stock: 5,
+      stock: faker.number.int({ min: 1, max: 15 }),
       image: "/product_images/Blends-UticaFirehouse.png",
       description:
         "Experience the perfect balance with our Half Caff blend. Delightfully smooth, it offers a milder caffeine experience without compromising on flavor, ensuring a satisfying cup every time.",
@@ -199,7 +200,7 @@ module.exports = async () => {
     {
       name: "Colombia Organic",
       price: 190,
-      stock: 5,
+      stock: faker.number.int({ min: 1, max: 15 }),
       image: "/product_images/SingleOrigin-Colombia.png",
       description:
         "From Colombia's fertile lands, our Organic blend offers a pure taste of nature's bounty. Smooth and vibrant with notes of cocoa and citrus, it's a testament to sustainability and quality.",
@@ -210,7 +211,7 @@ module.exports = async () => {
     {
       name: "Mexico Organic",
       price: 250,
-      stock: 5,
+      stock: faker.number.int({ min: 1, max: 15 }),
       image: "/product_images/SingleOrigin-Mexico.png",
       description:
         "Discover the essence of Mexico's highlands in every sip. Sustainably grown and delicately crafted, this blend offers a nuanced flavor profile with hints of chocolate, toasted nuts, and a gentle sweetness.",
@@ -221,7 +222,7 @@ module.exports = async () => {
     {
       name: "Sumatra Mandheling",
       price: 250,
-      stock: 5,
+      stock: faker.number.int({ min: 1, max: 15 }),
       image: "/product_images/SingleOrigin-Sumatra.png",
       description:
         "Embark on a journey to the lush landscapes of Sumatra with our Mandheling blend. Rich and full-bodied, it boasts earthy notes with hints of cocoa and spice, capturing the essence of Indonesia's finest coffee.",
@@ -232,7 +233,7 @@ module.exports = async () => {
     {
       name: "Guatemala Santo Domingo",
       price: 250,
-      stock: 5,
+      stock: faker.number.int({ min: 1, max: 15 }),
       image: "/product_images/SingleOrigin-Guatemala.png",
       description:
         "Experience the richness of Guatemala's coffee heritage with our Santo Domingo blend. Bold and complex, it offers a symphony of flavors with hints of dark chocolate, caramel, and a touch of fruity sweetness.",
@@ -243,7 +244,7 @@ module.exports = async () => {
     {
       name: "Ethiopia Yirgacheffe",
       price: 250,
-      stock: 5,
+      stock: faker.number.int({ min: 1, max: 15 }),
       image: "/product_images/SingleOrigin-EthiopiaOrganic.png",
       description:
         "Delve into the exotic flavors of Ethiopia with our Yirgacheffe blend. Renowned for its floral aroma and bright acidity, it offers a unique sensory journey with delicate notes of jasmine, citrus, and honey.",
@@ -254,7 +255,7 @@ module.exports = async () => {
     {
       name: "Colombia Supremo",
       price: 250,
-      stock: 5,
+      stock: faker.number.int({ min: 1, max: 15 }),
       image: "/product_images/SingleOrigin-ColombiaSupremo.png",
       description:
         "Revel in the supreme taste of Colombia with our distinguished blend. Grown in the country's fertile soils, it offers a rich and balanced flavor profile, showcasing notes of cocoa, caramel, and a hint of citrus.",
@@ -265,7 +266,7 @@ module.exports = async () => {
     {
       name: "Brazil",
       price: 250,
-      stock: 5,
+      stock: faker.number.int({ min: 1, max: 15 }),
       image: "/product_images/SingleOrigin-Brazil.png",
       description:
         "Delve into the exotic flavors of Ethiopia with our Yirgacheffe blend. Renowned for its floral aroma and bright acidity, it offers a unique sensory journey with delicate notes of jasmine, citrus, and honey.",
@@ -276,7 +277,7 @@ module.exports = async () => {
     {
       name: "Costa Rica",
       price: 250,
-      stock: 5,
+      stock: faker.number.int({ min: 1, max: 15 }),
       image: "/product_images/SingleOrigin-CostaRica.png",
       description:
         "Embark on a journey to the lush coffee plantations of Costa Rica with our Reserve blend. Delicately cultivated in the country's rich volcanic soils, it boasts a bright acidity, with notes of citrus, honey, and caramel.",

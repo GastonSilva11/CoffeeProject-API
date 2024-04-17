@@ -18,10 +18,10 @@ require("dotenv").config();
 
 async function runAllSeeders() {
   await require("./categorySeeder")();
-  await require("./productSeeder")();
   await require("./userSeeder")();
   await require("./orderSeeder")();
   await require("./adminSeeder")();
+  await require("./productSeeder")();
 
   console.log("[Database] Successfully inserted example Data for all tables!");
 }
