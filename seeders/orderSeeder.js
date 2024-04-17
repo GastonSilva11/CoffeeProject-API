@@ -308,7 +308,7 @@ module.exports = async () => {
     });
 
     orders.push({
-      status: "Pending",
+      status: ["Pending", "Processing", "Delivered"][Math.floor(Math.random() * 3)],
       method: ["MercadoPago", "Visa", "MasterCard"][Math.floor(Math.random() * 3)],
       totalPrice: orderProducts.reduce(
         (total, product) => total + product.price * product.quantity,
