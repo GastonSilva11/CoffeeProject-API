@@ -290,8 +290,8 @@ module.exports = async () => {
 
   for (let i = 0; i < 10; i++) {
     const orderProducts = [];
-    const totalPoducts = faker.number.int({ min: 1, max: 20 });
-    const quantity = faker.number.int({ min: 1, max: 10 });
+    const totalPoducts = faker.number.int({ min: 1, max: 6 });
+    const quantity = faker.number.int({ min: 1, max: 5 });
 
     const uniqueIndexes = new Set();
     while (uniqueIndexes.size < totalPoducts) {
