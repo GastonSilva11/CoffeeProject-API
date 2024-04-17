@@ -32,9 +32,6 @@ async function validateUser(req, res) {
 }
 
 async function validateAdmin(req, res) {
-  console.log(req.body.email);
-  console.log(req.body.password);
-
   try {
     const admin = await Admin.findOne({ where: { email: req.body.email } });
 
