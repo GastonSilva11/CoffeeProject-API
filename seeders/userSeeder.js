@@ -19,10 +19,16 @@ const bcrypt = require("bcryptjs");
 
 const { User } = require("../models");
 const { fakerES: faker } = require("@faker-js/faker");
-
+const encryptPassword = await bcrypt.hash("user", 10);
 module.exports = async () => {
-  const users = [];
-  const encryptPassword = await bcrypt.hash("user", 10);
+  const users = [
+    {
+      firstname: "User",
+      lastname: "User",
+      email: "user@user.com",
+      password: encryptPassword,
+    },
+  ];
 
   for (let i = 0; i < 10; i++) {
     users.push({
