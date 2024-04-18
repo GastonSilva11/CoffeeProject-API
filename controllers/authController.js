@@ -25,6 +25,7 @@ async function validateUser(req, res) {
     return res.json({
       token: token,
       userId: user.id,
+      name: user.firstname,
     });
   } catch (err) {
     console.log(err);

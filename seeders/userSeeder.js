@@ -24,7 +24,7 @@ module.exports = async () => {
   const encryptPassword = await bcrypt.hash("user", 10);
   const users = [
     {
-      firstname: "User",
+      firstname: "Guest",
       lastname: "User",
       email: "user@user.com",
       password: encryptPassword,
