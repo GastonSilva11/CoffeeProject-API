@@ -19,8 +19,9 @@ const bcrypt = require("bcryptjs");
 
 const { User } = require("../models");
 const { fakerES: faker } = require("@faker-js/faker");
-const encryptPassword = await bcrypt.hash("user", 10);
+
 module.exports = async () => {
+  const encryptPassword = await bcrypt.hash("user", 10);
   const users = [
     {
       firstname: "User",
