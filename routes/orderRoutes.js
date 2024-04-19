@@ -10,12 +10,8 @@ router.get(
   isAdmin,
   orderController.index,
 );
-router.post(
-  "/",
-  checkJwt({ secret: process.env.JWT_SECRET, algorithms: ["HS256"] }),
-  isAdmin,
-  orderController.store,
-);
+router.post("/", orderController.store);
+
 router.get(
   "/last",
   checkJwt({ secret: process.env.JWT_SECRET, algorithms: ["HS256"] }),
