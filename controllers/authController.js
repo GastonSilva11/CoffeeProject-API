@@ -20,12 +20,13 @@ async function validateUser(req, res) {
       return res.json({ msg: "Incorrect credentials. Please try again." });
     }
 
-    const token = jwt.sign({ sub: user.id }, process.env.JWT_SECRET);
+    const token = jwt.sign({ sub: user.id, role: "user" }, process.env.JWT_SECRET);
 
     return res.json({
       token: token,
       userId: user.id,
       name: user.firstname,
+      role: "user",
     });
   } catch (err) {
     console.log(err);
@@ -48,11 +49,12 @@ async function validateAdmin(req, res) {
       return res.json({ msg: "Incorrect credentials. Please try again." });
     }
 
-    const token = jwt.sign({ sub: admin.id }, process.env.JWT_SECRET);
+    const token = jwt.sign({ sub: admin.id, role: "admin" }, process.env.JWT_SECRET);
 
     return res.json({
       token: token,
       adminId: admin.id,
+      role: "admin",
     });
   } catch (err) {
     console.log(err);
